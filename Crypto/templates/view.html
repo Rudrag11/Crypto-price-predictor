@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency RSI and Price Chart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #1a1a2e;
+            color: #f5f5f5;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #162447;
+            color: #ffd700;
+        }
+
+        .navbar h1 {
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar nav a {
+            color: #ffd700;
+            margin-left: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar nav a:hover {
+            color: #ffcc00;
+        }
+
+        main {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #ffd700;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        h1 a {
+            color: #ffd700;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        h1 a:hover {
+            color: #ffcc00;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        label {
+            color: #ffdf80;
+            margin-bottom: 10px;
+        }
+
+        input {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #162447;
+            color: #f5f5f5;
+        }
+
+        button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #162447;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffd700;
+        }
+
+        .result, .error {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .result h2, .error p {
+            font-size: 20px;
+            color: #ffd700;
+        }
+
+        .error {
+            color: #ff6b6b;
+        }
+
+        #priceChart {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <h1><a href="/start"><i class="fas fa-arrow-left"></i></a>Cryptocurrency RSI and Price Chart</h1>
+        <nav>
+            <a href="/home">Back</a>
+        </nav>
+    </header>
+    
+    <main>
+        <form action="{{ url_for('view') }}" method="POST">
+            <label for="cryptoInput">Enter Cryptocurrency Symbol (e.g., BTC, ETH):</label>
+            <input type="text" id="coin" name="coin" required>
+            <button type="submit">Search</button>
+        </form>
+
+        {% if error %}
+            <div class="error">
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+        
+        {% if rsi and chart %}
+            <div class="result">
+                <h2>Latest RSI for {{ crypto }}: {{ rsi }}</h2>
+                <h2>Price Chart</h2>
+                <img id="priceChart" src="data:image/png;base64,{{ chart }}" alt="Price chart">
+            </div>
+        {% endif %}
+    </main>
+</body>
+</html>

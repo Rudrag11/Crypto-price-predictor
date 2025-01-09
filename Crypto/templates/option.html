@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Predictor</title>
+    <link rel="stylesheet" href="frontendpt2.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1a1a2e;
+    color: #f5f5f5;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #162447;
+    color: #ffd700;
+}
+
+.navbar h1 {
+    font-size: 24px;
+}
+
+.navbar nav a {
+    color: #ffd700;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar nav a:hover {
+    color: #ffcc00;
+}
+
+main {
+    padding: 40px;
+    text-align: center;
+}
+
+.welcome h2 {
+    font-size: 36px;
+    color: #ffd700;
+}
+
+.welcome p {
+    font-size: 20px;
+    margin: 10px 0 30px;
+    color: #ffdf80;
+}
+
+.about {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #0f3460;
+    border-radius: 8px;
+}
+
+.about h3 {
+    color: #ffd700;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.button-card {
+    background-color: #162447;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-card h4 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.button-card p {
+    color: #e0e0e0;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.button-card button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #162447;
+    transition: background-color 0.3s;
+}
+
+.button-card button:hover {
+    background-color:#ffd700;
+}
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <h1>Crypto Predictor</h1>
+        <nav>
+            <!-- <a href="#">Home</a>
+            <a href="#">Crypto Prediction</a> -->
+            <a href="/start/login">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome">
+            <h2>Welcome to Crypto Predictor</h2>
+            <p>Empowering investors with AI-driven insights and cryptocurrency recommendations.</p>
+        </section>
+        <section class="about">
+            <h3>About Cryptocurrency Markets</h3>
+            <p>
+                The cryptocurrency market operates 24/7, allowing investors worldwide to trade digital assets
+                such as Bitcoin, Ethereum, and many altcoins. Cryptocurrencies offer a decentralized
+                alternative to traditional financial systems, with high volatility and potentially high rewards.
+            </p>
+            <p>
+                Our platform provides AI-based predictions and real-time insights to help both new and
+                experienced investors navigate this dynamic market.
+            </p>
+        </section>
+        <section class="buttons-container">
+            <div class="button-card">
+                <h4>Crypto Predictor</h4>
+                <p>Predict future cryptocurrency prices using deep learning algorithms.</p>
+                <a href="/predict"><button>Predict Crypto</button>
+            </div>
+            <div class="button-card">
+                <h4>Crypto Currencies Information</h4>
+                <p>View the real-time crypto graph, risk calulator</p>
+                <a href="/view-crypto"><button>Start Chat</button></a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
