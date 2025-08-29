@@ -33,9 +33,9 @@ def download_dataset(force=False):
     setup_kaggle_auth(os.path.join(BASE_PATH, "kaggle.json"))
     
     # Skip download if data already exists
-    if not force and any(fname.endswith(".csv") for fname in os.listdir(DATA_FOLDER)):
-        print("✅ Dataset already available. Skipping download.")
-        return
+    # if not force and any(fname.endswith(".csv") for fname in os.listdir(DATA_FOLDER)):
+    #     print("✅ Dataset already available. Skipping download.")
+    #     return
     
     print("⬇️ Downloading dataset from Kaggle...")
     os.system(f'kaggle datasets download -d {DATASET_ID} -p "{DATA_FOLDER}" --unzip')
