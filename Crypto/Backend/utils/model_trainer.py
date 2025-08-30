@@ -89,7 +89,8 @@ def train_and_predict(symbol):
 
         # Save predictions
         pred_file = os.path.join(DATA_FOLDER, f"{symbol}_predictions.csv")
-        pd.DataFrame([{"Date": next_date, "Predicted_Close": next_price}]).to_csv(pred_file, index=False)
+        df = pd.DataFrame([{"Date": next_date, "Predicted_Close": next_price}])
+        df.to_csv(pred_file, index=False)
 
         return {"symbol": symbol, "date": next_date.strftime("%Y-%m-%d"), "predicted_price": round(next_price, 2)}
 
