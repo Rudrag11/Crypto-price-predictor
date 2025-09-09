@@ -1,3 +1,5 @@
+# downloads data from kaggle
+
 import os
 import json
 import pandas as pd
